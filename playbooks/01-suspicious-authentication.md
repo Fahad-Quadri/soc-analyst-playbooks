@@ -27,3 +27,6 @@
 
 ## Escalate when
 A successful login follows a failure burst from an unfamiliar source **and** any post-login change occurs (rule, MFA method, forwarding, privilege change).
+
+## Worked example (synthetic)
+Forty failed logins against thirty different accounts arrive from one external IP in ten minutes, one per account, then a single success on a user account. The pattern is password spraying. The successful account is signed out and its password reset, mailbox rules and MFA methods are reviewed (a new forwarding rule is found), and the case is escalated as a confirmed account compromise. The source IP is blocked, and the same IP is searched across all other accounts.

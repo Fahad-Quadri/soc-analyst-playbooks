@@ -27,3 +27,6 @@ http.request.method == "POST"                                       # outbound d
 
 ## Document
 Signature ID, flow tuple, timestamps, what the packets showed, verdict, and any tuning recommendation.
+
+## Worked example (synthetic)
+An IDS signature for a web exploit fires on an inbound request. The capture shows a single SYN-ACK exchange, the request, and a server response of 404 with no payload; the host logs show nothing after the request. The source IP has also probed ten other hosts in the last hour. Verdict: failed scanning attempt. The IP is blocked, the signature is kept, and no escalation is needed.

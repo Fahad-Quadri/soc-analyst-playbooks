@@ -12,9 +12,23 @@ The triage playbooks I work from as a SOC / Security Analyst: how I decide wheth
 
 | # | Playbook | Focus | ATT&CK |
 |---|----------|-------|--------|
-| 01 | [Suspicious authentication](playbooks/01-suspicious-authentication.md) | Brute force, impossible travel, MFA fatigue | T1110, T1078, T1621 |
+| 01 | [Suspicious authentication](playbooks/01-suspicious-authentication.md) | Spraying, brute force, impossible travel, MFA fatigue | T1110, T1078, T1621 |
 | 02 | [Vulnerability prioritization](playbooks/02-vulnerability-prioritization.md) | Turning Nessus / OpenVAS output into a fix order | n/a |
 | 03 | [IDS/IPS alert validation](playbooks/03-ids-alert-validation.md) | Confirming a signature hit at packet level (Wireshark, Nmap) | T1046, T1071 |
+| 04 | [Malware & ransomware triage](playbooks/04-malware-ransomware-triage.md) | Infection chain, isolation, recovery decisions | T1204, T1486, T1490 |
+| 05 | [EDR alert triage](playbooks/05-edr-alert-triage.md) | Five-question method, benign vs malicious signals | by detection |
+| 06 | [Lateral movement & privilege escalation](playbooks/06-lateral-movement-privilege-escalation.md) | Windows event IDs, hop mapping, credential theft | T1021, T1003, T1068 |
+| 07 | [Data exfiltration](playbooks/07-data-exfiltration.md) | Baselines, staging, destinations, regulated data | T1041, T1048, T1567 |
+| 08 | [Cloud identity anomaly](playbooks/08-cloud-identity-anomaly.md) | AWS / Azure / GCP audit logs, keys, logging tampering | T1078.004, T1098, T1562.008 |
+| 09 | [Web attack triage](playbooks/09-web-attack-triage.md) | Did the attack work? Web shell hunt | T1190, T1595, T1505.003 |
+
+Every playbook has the same shape: trigger, triage questions, decision table, containment, false positives, documentation, and a short synthetic worked example.
+
+## Reference
+
+- [Severity & escalation matrix](reference/severity-and-escalation.md): levels, modifiers, who to escalate to, and a handoff note template
+- [Alert triage checklist](reference/alert-triage-checklist.md): the one-page routine for every alert
+- [Log source cheat sheet](reference/log-source-cheatsheet.md): which log answers which question
 
 ## Detections
 
