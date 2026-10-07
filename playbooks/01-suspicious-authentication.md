@@ -1,4 +1,4 @@
-# 02 - Suspicious Authentication
+# 01 - Suspicious Authentication
 
 **Trigger:** failed-login burst, impossible travel, new-device sign-in, MFA push spam.
 **ATT&CK:** T1110 (Brute force), T1078 (Valid accounts), T1621 (MFA request generation)

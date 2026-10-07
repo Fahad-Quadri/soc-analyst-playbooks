@@ -1,4 +1,4 @@
-# 04 - IDS/IPS Alert Validation
+# 03 - IDS/IPS Alert Validation
 
 **Goal:** decide whether a signature hit is a real intrusion, a scan, or noise, using packet-level evidence.
 **ATT&CK:** T1046 (Network service discovery), T1071 (Application layer protocol)
