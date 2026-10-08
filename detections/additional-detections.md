@@ -2,13 +2,13 @@
 
 Complements [splunk-detection-library](https://github.com/Fahad-Quadri/splunk-detection-library) (brute force, password spraying, encoded PowerShell, Office spawning a shell, privileged group changes, log clearing, DNS tunneling, impossible travel). These two cover gaps it does not.
 
-Placeholders: replace `index`, `sourcetype`, and field names with your data model. Tune thresholds to your baseline before alerting.
+Example queries. Placeholders: replace `index`, `sourcetype`, and field names with your data model. Tune thresholds to your baseline before alerting.
 
 ## 1. New inbox forwarding or delete rule (T1114.003, BEC)
 ```spl
 index=o365 sourcetype=o365:management:activity
   (Operation="New-InboxRule" OR Operation="Set-InboxRule" OR Operation="Set-Mailbox")
-| eval params=mvjoin('Parameters{}.Value', " | ")
+| eval params=mvjoin('Parameters{}.Name', " | ") . " || " . mvjoin('Parameters{}.Value', " | ")
 | where match(params, "(?i)ForwardTo|ForwardAsAttachmentTo|RedirectTo|DeleteMessage|ForwardingSmtpAddress")
 | table _time UserId Operation ClientIP params
 ```
